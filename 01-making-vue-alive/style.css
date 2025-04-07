@@ -1,0 +1,13 @@
+body {
+    font-family: monospace;
+    padding: 20px;
+    font-size: 2em;
+  }
+
+  .can {
+    color: green;
+  }
+
+  .cant {
+    color: red;
+  }
