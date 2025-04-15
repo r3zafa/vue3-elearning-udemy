@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Vue 3.4 Template</title>
+    <!--imports-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-clifford: #1143c9;
+        }
+    </style>
+    <link href="index.css" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3.4.0"></script>
+</head>
+
+<body class="min-h-screen min-w-screen flex flex-col justify-center content-center items-center bg-pink-400" >
+<div class="flex flex-col justify-center bg-white rounded-3xl m-0 py-12 w-lg gap-3" id="app">
+    <!-- main -->
+
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+            Driving licence age control
+        </h2>
+    </div>
+
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+
+        <div>
+            <label class="block text-sm/6 font-medium text-gray-900" for="age">Enter your age</label>
+            <div class="mt-2">
+                <input class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" id="age"
+                       v-model="age">
+            </div>
+        </div>
+
+
+    </div>
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+
+        <h2>
+            {{message}}
+        </h2>
+
+        <div>Can you drive:
+            <span :class="{'can': canDrive === 'Yes', cant: canDrive === 'No'}">
+                            {{canDrive}}
+                        </span>
+        </div>
+    </div>
+
+</div>
+<script src="index.js"></script>
+</body>
+
+</html>
