@@ -1,24 +1,15 @@
 const {createApp, ref, computed} = Vue;
 const App = {
     setup() {
-        let message = ref('Hello');
+        let message = ref('-');
         let age = ref(null);
-        let canDrive = computed(
-            () => {
-                console.log('Computed!');
-                return age.value >= 18 ? 'Yes' : 'No';
-            }
-        );
+        let canDrive = computed(() => {
+            if (!age.value) message.value = '-';
+            else if (age.value >= 18) message.value = 'Congratulations! You are ready to take a course!';
+            else message.value = 'You are not ready to take a course!';
 
-        setTimeout(
-            () => {
-                console.log('Changed!');
-                message.value = 'Bye!';
-                age.value = 24;
-            },
-            5000
-        )
-
+            return age.value >= 18
+        });
         return {
             message,
             canDrive,

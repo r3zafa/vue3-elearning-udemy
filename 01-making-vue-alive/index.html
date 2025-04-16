@@ -17,39 +17,21 @@
 </head>
 
 <body class="min-h-screen min-w-screen flex flex-col justify-center content-center items-center bg-pink-400" >
-<div class="flex flex-col justify-center bg-white rounded-3xl m-0 py-12 w-lg gap-3" id="app">
+<div class="flex flex-col justify-center bg-white rounded-3xl m-0 p-12 w-lg gap-3 shadow-2xl" id="app">
     <!-- main -->
 
-    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
-            Driving licence age control
-        </h2>
+    <h1 class="text-center text-3xl/12 font-bold tracking-tight text-gray-900"> Driving licence age control </h1>
+
+    <div>
+        <label class="block text-sm/6 font-medium text-gray-900" for="age">Enter your age</label>
+        <input class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+               id="age"
+               v-model="age">
     </div>
 
-    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
-        <div>
-            <label class="block text-sm/6 font-medium text-gray-900" for="age">Enter your age</label>
-            <div class="mt-2">
-                <input class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" id="age"
-                       v-model="age">
-            </div>
-        </div>
-
-
-    </div>
-    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-
-        <h2>
-            {{message}}
-        </h2>
-
-        <div>Can you drive:
-            <span :class="{'can': canDrive === 'Yes', cant: canDrive === 'No'}">
-                            {{canDrive}}
-                        </span>
-        </div>
-    </div>
+    <h3>Result:</h3>
+    <p :class="{'can': canDrive, cant: !canDrive}"> {{message}} </p>
 
 </div>
 <script src="index.js"></script>
