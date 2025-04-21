@@ -31,7 +31,7 @@
   "editor.wordWrap": "on",
   "editor.renderControlCharacters": false,
   "editor.accessibilitySupport": "off",
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "One Hunter Theme",
   "workbench.activityBar.location": "default",
   "workbench.hover.delay": 500,
   "workbench.sash.hoverDelay": 500,
