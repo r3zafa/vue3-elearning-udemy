@@ -1,74 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!--header-->
 
-<!--header-->
-
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <title>Vue 3.4</title>
-    <meta name="description" content="Vue 3.4">
-    <meta name="author" content="r3zafa">
-    <meta name="keywords" content="Vue, Vue 3.4, Vue 3.4 tutorial, Vue 3.4 example">
-    <meta name="theme-color" content="#4a4a4a">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="msapplication-TileColor" content="#4a4a4a">
-    <meta name="msapplication-TileImage" content="https://www.example.com/ms-icon-144x144.png">
-    <meta name="msapplication-config" content="https://www.example.com/browserconfig.xml">
-    <meta name="apple-mobile-web-app-title" content="Vue 3.4">
-    <meta name="application-name" content="Vue 3.4">
-    <meta name="viewport-fit" content="cover">
+    <meta name="description" content="Vue 3.4" />
+    <meta name="author" content="r3zafa" />
+    <meta
+      name="keywords"
+      content="Vue, Vue 3.4, Vue 3.4 tutorial, Vue 3.4 example"
+    />
+    <meta name="theme-color" content="#4a4a4a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-TileColor" content="#4a4a4a" />
+    <meta
+      name="msapplication-TileImage"
+      content="https://www.example.com/ms-icon-144x144.png"
+    />
+    <meta
+      name="msapplication-config"
+      content="https://www.example.com/browserconfig.xml"
+    />
+    <meta name="apple-mobile-web-app-title" content="Vue 3.4" />
+    <meta name="application-name" content="Vue 3.4" />
+    <meta name="viewport-fit" content="cover" />
 
     <script src="https://unpkg.com/vue@3.4.0"></script>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Enable dark mode class strategy
-        tailwind.config = {
-        darkMode: 'class',
-        }
+      // Enable dark mode class strategy
+      tailwind.config = {
+        darkMode: "class",
+      };
     </script>
     <!--imports-->
-    <link href="index.css" rel="stylesheet">
-</head>
+    <link href="index.css" rel="stylesheet" />
+  </head>
 
-<!--body-->
+  <!--body-->
 
-<body class="body">
-    
+  <body class="body">
     <nav class="nav">
-        <h1 class="text-xl md:text-2xl font-medium text-gray-900 dark:text-white">Driving licence age control</h1>
-        <button onclick="modeSwitch()" class="mode-btn">
-            <svg class="block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg class="hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                    fill-rule="evenodd" clip-rule="evenodd"></path>
-            </svg>
-        </button>
+      <h1 class="text-xl md:text-2xl font-medium text-gray-900 dark:text-white">
+        Driving licence age control
+      </h1>
+      <button onclick="modeSwitch()" class="mode-btn" title="Toggle dark mode">
+        <svg class="block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+          ></path>
+        </svg>
+        <svg class="hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
     </nav>
-    
-    <div class="flex flex-col justify-center m-0 p-12 w-dvw gap-12 dark:text-white" id="app">
-    
-        <div class="flex flex-col w-full gap-3 lg:w-1/2 lg:max-w-[600px]">
-            <label :class="labelClasses" for="age">Enter your age</label>
-            <input :class="textInput" id="age" v-model="age">
-        </div>
-        <div class="flex flex-col w-full gap-3">
-            <h3 :class="resultHeadingClasses">Result:</h3>
-            <p :class="resultTextClasses"> {{message}} </p>
-        </div>
+
+    <div
+      class="flex flex-col justify-center m-0 p-12 w-dvw gap-12 dark:text-white"
+      id="app"
+    >
+      <div class="flex flex-col w-full gap-3 lg:w-1/2 lg:max-w-[600px]">
+        <label :class="labelClasses" for="age">Enter your age</label>
+        <input :class="textInput" id="age" v-model="age" />
+      </div>
+      <div class="flex flex-col w-full gap-3">
+        <h3 :class="resultHeadingClasses">Result:</h3>
+        <p :class="resultTextClasses">{{message}}</p>
+      </div>
     </div>
+  </body>
 
-</body>
-
-<!-- js scripts -->
-<script src="index.js"></script>
-
+  <!-- js scripts -->
+  <script src="index.js"></script>
 </html>
