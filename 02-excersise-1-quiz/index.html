@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--header-->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>QuizApp</title>
+    <meta name="description" content="Vue 3.4" />
+    <meta name="author" content="r3zafa" />
+    <meta name="theme-color" content="#4a4a4a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-TileColor" content="#4a4a4a" />
+    <meta
+      name="msapplication-TileImage"
+      content="https://www.example.com/ms-icon-144x144.png"
+    />
+    <meta
+      name="msapplication-config"
+      content="https://www.example.com/browserconfig.xml"
+    />
+    <meta name="apple-mobile-web-app-title" content="Vue 3.4" />
+    <meta name="application-name" content="Vue 3.4" />
+    <meta name="viewport-fit" content="cover" />
+
+    <script src="https://unpkg.com/vue@3.4.0"></script>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Enable dark mode class strategy
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <!--imports-->
+    <link href="index.css" rel="stylesheet" />
+  </head>
+
+  <!--body-->
+
+  <body class="body">
+    <nav class="nav">
+      <h1 class="text-xl md:text-2xl font-medium text-gray-900 dark:text-white">
+        Driving licence age control
+      </h1>
+      <button onclick="modeSwitch()" class="mode-btn" title="Toggle dark mode">
+        <svg class="block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+          ></path>
+        </svg>
+        <svg class="hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+    </nav>
+
+    <div
+      id="app"
+      class="flex flex-col justify-center m-0 p-12 w-dvw gap-12 dark:text-white"
+    >
+      <div
+        class="flex flex-col w-full gap-3 lg:w-1/2 lg:max-w-[600px] gap-[1.5rem]"
+      >
+        <div
+          class="flex justify-between items-center bg-gray-100 dark:bg-gray-800 p-4 rounded-md"
+        >
+          <span class="text-lg font-medium text-green-500"
+            >Correct: {{ correctAnswer }}</span
+          >
+          <span class="text-lg font-medium text-red-500"
+            >Wrong: {{ wrongAnswer }}</span
+          >
+          <span class="text-lg font-medium">
+            Question {{ currentIndex >= questions.length ? questions.length :
+            currentIndex + 1 }} of {{ questions.length }}
+          </span>
+        </div>
+
+        <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">
+          {{ currentQuestion }}
+        </h1>
+
+        <input
+          :autofocus="true"
+          v-if="currentIndex < questions.length"
+          type="text"
+          v-model="currentAnswer"
+          :class="textInputClass"
+          placeholder="Your answer"
+          @keyup.enter="currentAnswer && currentAnswer.trim().length > 0 && submitAnswer()"
+        />
+
+        <button
+          v-if="currentIndex < questions.length"
+          @click="submitAnswer"
+          :disabled="!currentAnswer || currentAnswer.trim().length < 1"
+          class="mt-4 px-2 py-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed"
+        >
+          Submit answer
+        </button>
+
+        <button
+          v-if="currentIndex >= questions.length"
+          @click="restartQuiz"
+          class="mt-4 px-2 py-4 bg-green-500 text-white rounded-md hover:bg-green-600"
+        >
+          Restart Quiz
+        </button>
+      </div>
+
+      <div>
+        <p
+          v-for="(answer, index) in answered"
+          :class="{'text-green-500': isCorrectAnswer(answer,index), 'text-red-500': !isCorrectAnswer(answer,index)}"
+        >
+          <span class="font-bold">{{ questions[index].answer }}</span>
+          {{ answer }}
+        </p>
+      </div>
+    </div>
+  </body>
+
+  <!-- js scripts -->
+  <script src="main.js"></script>
+  <script src="index.js"></script>
+</html>

@@ -30,16 +30,62 @@
   "editor.wordWrap": "on",
   "editor.renderControlCharacters": false,
   "editor.accessibilitySupport": "off",
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Tokyo Night",
   "workbench.activityBar.location": "default",
   "workbench.hover.delay": 500,
   "workbench.sash.hoverDelay": 500,
   "workbench.editor.empty.hint": "hidden",
   "workbench.statusBar.visible": true,
   "workbench.startupEditor": "none",
-  "workbench.preferredDarkColorTheme": "Default Dark+",
+  "workbench.preferredDarkColorTheme": "Tokyo Night",
   "workbench.layoutControl.enabled": false,
   "editor.scrollbar.scrollByPage": true,
   "zenMode.centerLayout": false,
-  "zenMode.fullScreen": true
+  "zenMode.fullScreen": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "string.quoted",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#98e524" // light green, like in screenshot
+        }
+      },
+      {
+        "scope": "constant.language.null",
+        "settings": {
+          "foreground": "#F07178" // red tone for `null`
+        }
+      },
+      {
+        "scope": "constant.language.boolean",
+        "settings": {
+          "foreground": "#F07178" // red tone for `true` and `false`
+        }
+      },
+      {
+        "scope": "variable.language",
+        "settings": {
+          "foreground": "#F07178" // red tone for `this`
+        }
+      },
+      {
+        "scope": [
+          "VARIABLE.OTHER",
+          "VARIABLE.OTHER.LOCAL",
+          "VARIABLE.OTHER.LOCAL.JS"
+        ],
+        "settings": {
+          "foreground": "#F07178" // red tone for local variables
+        }
+      },
+      {
+        "scope": "entity.name.tag.html",
+        "settings": {
+          "fontStyle": "uppercase",
+          "foreground": "#FF9E64" // orange tone for uppercase HTML tags
+        }
+      }
+    ]
+  }
 }
