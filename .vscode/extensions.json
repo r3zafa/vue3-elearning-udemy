@@ -1,19 +1,25 @@
 {
-    "recommendations": [
-      "Vue.volar",
-      "dbaeumer.vscode-eslint",
-      "esbenp.prettier-vscode",
-      "formulahendry.auto-close-tag",
-      "formulahendry.auto-complete-tag",
-      "steoates.autoimport",
-      "ms-vscode.vscode-typescript-next",
-      "ritwickdey.liveserver",
-      "raillyhugo.one-hunter",
-      "whizkydee.material-palenight-theme",
-      "ahmadawais.shades-of-purple",
-      "bradlc.vscode-tailwindcss",
-      "stivo.tailwind-fold",
-      "enkia.tokyo-night",
-      "raunofreiberg.vesper"
-    ]
-  }
+  "recommendations": [
+    "Vue.volar",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "rvest.vs-code-prettier-eslint",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-complete-tag",
+    "steoates.autoimport",
+    "ms-vscode.vscode-typescript-next",
+    "yandeu.five-server",
+    "raillyhugo.one-hunter",
+    "ahmadawais.shades-of-purple",
+    "bradlc.vscode-tailwindcss",
+    "enkia.tokyo-night",
+    "pkief.material-icon-theme",
+    "whizkydee.material-palenight-theme",
+    "raunofreiberg.vesper",
+    "github.copilot-chat",
+    "github.copilot",
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "mikestead.dotenv",
+    "github.remotehub"
+  ]
+}
